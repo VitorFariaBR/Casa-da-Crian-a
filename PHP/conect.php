@@ -2,7 +2,7 @@
 
     class conect{
         private static $dbNome = "casa_da_crianca";
-        private static $dbHost = "localHost";
+        private static $dbHost = "localhost";
         private static $dbUsuario = "root";
         private static $dbSenha = ""; 
 
