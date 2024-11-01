@@ -1,7 +1,7 @@
 <?php 
 
     class conect{
-        private static $dbNome = "casa_da_criança";
+        private static $dbNome = "casa_da_crianca";
         private static $dbHost = "localHost";
         private static $dbUsuario = "root";
         private static $dbSenha = ""; 
