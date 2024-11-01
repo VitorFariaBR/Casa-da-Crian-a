@@ -1,5 +1,5 @@
 <?php 
-    
+   
     session_start();
     $_SESSION["username"] = "";
     $_SESSION["loggedin"] = false;
@@ -16,8 +16,8 @@
     if($result->rowCount() > 0){
         $_SESSION["username"] = $usuario;
         $_SESSION["loggedin"] = true;
-        header("Location: listCrianca.php"); 
+        header("Location: painel.php"); 
     }else{
-        header("Location: listCrianca.php");
+        header("Location: index.php");
     }
 ?>

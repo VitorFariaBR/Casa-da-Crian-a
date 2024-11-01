@@ -2,7 +2,7 @@
     session_start();
 
     if(!isset($_SESSION) || ($_SESSION["loggedin"] == false)){
-        header("Location: index.php");
+        header("Location: painel.php");
     }
 
     include 'conect.php';
