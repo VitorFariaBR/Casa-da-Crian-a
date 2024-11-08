@@ -17,7 +17,7 @@
             <button class="styledButton" type="button" onclick="location.href = '/Projeto/Casa-da-Crian-a/PHP/listCrianca.php'">Alunos</button>
             <button>Atividades</button>
         </div>
-        <button class="sair" type="button" onclick="location.href = '/PHP/login.php'">SAIR</button>
+        <button class="sair" type="button" onclick="location.href = '/Projeto/Casa-da-Crian-a/PHP/login.php'">SAIR</button>
     </div>
 </body>
 </html>
