@@ -37,16 +37,16 @@ if (isset($_POST['nome'])) {
     <title>Adicionar Criança</title>
 </head>
 
-<body>
-    <h3>
+<body class="azul">
+    <!--<h3>
         <?php
         echo "CASA DA CRIANÇA";
         ?>
     </h3>
-    <hr>
+    <hr> -->
 
-    <section class="formatacao_create_dados">
-        <section>
+    <section>
+        <section class="local-dos-dados">
             <div>
                 <h3>Nome do Aluno</h3>
                 <input type="text" name="nome"><br><br>
@@ -63,7 +63,8 @@ if (isset($_POST['nome'])) {
             </div>
         </section>
 
-        <section class="formatacao_create_dados">
+        <section class="local-dos-dados">
+            <div>
             <h3>Data de Nascimento</h3>
             <input type="text" name="nome"><br><br>
             </div>
@@ -79,7 +80,7 @@ if (isset($_POST['nome'])) {
             </div>
         </section>
 
-        <section class="formatacao_create_dados">
+        <section class="local-dos-dados">
             <div>
                 <h3>Endereço</h3>
                 <input type="text" name="nome"><br><br>
@@ -94,10 +95,9 @@ if (isset($_POST['nome'])) {
                 <h3>Cidade</h3>
                 <input type="text" name="nome"><br><br>
             </div>
-        </section>
+        </section> 
     </section>
-
-    <p>
+    <!--<p>
         Adicionar crianças - Casa da Criança
     </p>
 
@@ -105,7 +105,7 @@ if (isset($_POST['nome'])) {
     <form action="createCrianca.php" method="post">
         <input type="text" name="nome"><br><br>
         <button type="submit">Salvar</button>
-    </form>
+    </form> -->
 </body>
 
 </html>

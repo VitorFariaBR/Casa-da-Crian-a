@@ -164,6 +164,11 @@ p {
     border: 2px solid black;
 }
 
-.formatacao_create_dados {
-    width: ;
+.azul {
+    background-color: #00b3b3;
+}
+
+.local-dos-dados {
+    display: flex; 
+    justify-content: space-around;
 }
