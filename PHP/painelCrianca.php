@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/homeADM.css">
-    <title>HOME</title>
+    <title>ALUNOS</title>
 </head>
 <body>
     <header class="cabecalho">
@@ -16,32 +16,34 @@
     <br>
     <br>
     <br>
-
-    <h5>ALUNOS</h5>
+    <header class="cabecalhoAluno">
+        <div class="cabecalho-tituloAluno">
+            <h5>ALUNOS</h5>
+        </div>
+    </header>
 
     <main>
         <nav class="main-home-navegacao">
-            <div class="row">
+            <div class="row2">
                 <button type="button" onclick="location.href = '/Projeto/Casa-da-Crian-a/PHP/createCrianca.php'">
                     <p>ADICIONAR</p>
                 </button>
-    
+                <br>
                 <button type="button" onclick="location.href = '/Projeto/Casa-da-Crian-a/PHP/listCrianca.php'">
                     <p>LISTA DE ALUNOS</p>
                 </button>
-            </div>
-            <div class="row">
+                <br>
                 <button type="button" onclick="location.href = '/Projeto/Casa-da-Crian-a/PHP/updateCrianca.php'">
                     <p>EDITAR DADOS</p>
-                </button>                
+                </button>
+                <br>                
             </div>
         </nav>
 
         <div class="main-logo-casadacrianca">
             <div class="imagem"><img src="assets/img/LOGO casa da crianca.png" alt="Logo Casa da Criança"></div>
-            <button class="botao-sair" type="button" onclick="location.href = '/Projeto/Casa-da-Crian-a/PHP/login.php'"><p>SAIR</p></button>
         </div>
-        <div class="main-background-bola"></div>    
+        <button class="botao-sair" type="button" onclick="location.href = 'index.php'"><p>SAIR</p></button>
     </main>
 </body>
 </html>

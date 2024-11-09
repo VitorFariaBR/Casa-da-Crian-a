@@ -60,6 +60,32 @@
     </p>
 
     <p>====== LISTA ======</p>
+
+    <table>
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Ações</th>
+        
+    </tr>
+        <?php 
+            foreach($listCrianca as $crianca){
+                echo'<tr>
+                        <td>'. $crianca['id'] .'</td>
+                        <td>'. $crianca['nome'] .'</td>  
+                        <td>
+                            <a href="deleteCrianca.php?id='. $crianca['id'] .'">
+                                <img src="./foto/lixeira.png" alt="Lixeira">
+                            </a>
+                            <a href="updateCrianca.php?id='. $crianca['id'] .'">
+                                <img src="./foto/lapis.png" alt="Lapis">
+                            </a>
+                        </td>  
+                    </tr>';
+            }
+        ?>
+    </table>
+
     <form action="" method="post">
         <input type="text" name="nome"><br><br>
         <button type="submit">Salvar</button>

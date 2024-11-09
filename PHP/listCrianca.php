@@ -47,14 +47,6 @@
                 echo'<tr>
                         <td>'. $crianca['id'] .'</td>
                         <td>'. $crianca['nome'] .'</td>  
-                        <td>
-                            <a href="/PHP/deleteCrianca.php?id='. $crianca['id'] .'">
-                                <img src="./foto/lixeira.png" alt="Lixeira">
-                            </a>
-                            <a href="/PHP/updateCrianca.php?id='. $crianca['id'] .'">
-                                <img src="./foto/lapis.png" alt="Lapis">
-                            </a>
-                        </td>  
                     </tr>';
             }
         ?>
