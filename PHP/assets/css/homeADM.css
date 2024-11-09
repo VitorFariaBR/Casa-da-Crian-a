@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: #45AAB8;
+}
+
+.cabecalho{
+    width: 100vw;
+    height: 15vh;
+}
+
+.cabecalho .cabecalho-titulo{
+    height: 100%;
+    width: 70%;
+    background-color: #45AAB8;
+    border-radius: 0px 20px 20px 20px;
+    box-shadow: 1px 1px 10px black;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    height: 85vh;
+    width: 100vw;
+    display: flex;
+}
+
+.main-home-navegacao{
+    height: 100%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.row{
+    margin: 25px;
+}
+
+.row button{
+    margin: 0 30px 0 30px;
+}
+
+.main-home-navegacao button{
+    background-color: #1A66CC;
+    color: rgb(255, 255, 255);
+    width: 360px;
+    height: 50px;
+    border-radius: 40px;
+    border: 3px solid black;
+    font-size: 1rem;
+}
+
+.main-logo-casadacrianca{
+    position: relative;
+    height: 100%;
+    width: 40%;
+}
+
+.main-logo-casadacrianca .imagem{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.imagem img{
+    max-width: 500px;
+    max-height: 500px;
+    height: 55%;
+    width: auto;
+}
+
+.main-logo-casadacrianca .botao-sair{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background-color: #1A66CC;
+    color: rgb(255, 255, 255);
+    width: 160px;
+    height: 70px;
+    border-radius: 40px;
+    border: 3px solid black;
+}
+
+.main-logo-casadacrianca .botao-sair p{
+    font-size: 2rem;
+}
+
+.main-background-bola{
+    position: fixed;
+    top: -30%;
+    left: 60%;
+    height: 1200px;
+    width: 1200px;
+    background-color: yellow;
+    z-index: -1;
+    border-radius: 50%;
+    border: 3px solid black;
+}

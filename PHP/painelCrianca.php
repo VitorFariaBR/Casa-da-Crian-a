@@ -13,30 +13,27 @@
         </div>
     </header>
 
+    <br>
+    <br>
+    <br>
+
+    <h5>ALUNOS</h5>
+
     <main>
         <nav class="main-home-navegacao">
             <div class="row">
-                <button>
-                    <p>Lista de Chamada</p>
+                <button type="button" onclick="location.href = '/Projeto/Casa-da-Crian-a/PHP/createCrianca.php'">
+                    <p>ADICIONAR</p>
                 </button>
     
-                <button>
-                    <p>Professores</p>
+                <button type="button" onclick="location.href = '/Projeto/Casa-da-Crian-a/PHP/listCrianca.php'">
+                    <p>LISTA DE ALUNOS</p>
                 </button>
             </div>
             <div class="row">
-                <button type="button" onclick="location.href = '/Projeto/Casa-da-Crian-a/PHP/painelCrianca.php'">
-                    <p>Alunos</p>
-                </button>
-    
-                <button>
-                    <p>Atividades</p>
-                </button>
-            </div>
-            <div class="row">
-                <button>
-                    <p>Turmas</p>
-                </button>
+                <button type="button" onclick="location.href = '/Projeto/Casa-da-Crian-a/PHP/updateCrianca.php'">
+                    <p>EDITAR DADOS</p>
+                </button>                
             </div>
         </nav>
 
