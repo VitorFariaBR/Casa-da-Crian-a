@@ -119,6 +119,7 @@ p {
     margin-top: 50px;
 }
 
+
 .buttons button {
     background-color: #0066cc;
     color: white;
@@ -161,4 +162,8 @@ p {
     font-size: 1em;
     cursor: pointer;
     border: 2px solid black;
+}
+
+.formatacao_create_dados {
+    width: ;
 }
