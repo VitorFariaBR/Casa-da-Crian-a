@@ -27,6 +27,18 @@ body{
     align-items: center;
 }
 
+.cabecalhoAluno .cabecalho-tituloAluno{
+    height: 90%;
+    width: 30%;
+    background-color: #eeff00;
+    border-radius: 0px 20px 20px 20px;
+    box-shadow: 1px 1px 10px black;
+    font-size: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 main{
     height: 85vh;
     width: 100vw;
@@ -48,6 +60,15 @@ main{
 
 .row button{
     margin: 0 30px 0 30px;
+}
+
+.row2{
+    margin: 25px;
+    display: flex;
+}
+
+.row2 button{
+    margin: 10px 0px 10px 0px;
 }
 
 .main-home-navegacao button{

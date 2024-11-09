@@ -42,9 +42,10 @@
 
         <div class="main-logo-casadacrianca">
             <div class="imagem"><img src="assets/img/LOGO casa da crianca.png" alt="Logo Casa da Criança"></div>
-            <button class="botao-sair" type="button" onclick="location.href = '/Projeto/Casa-da-Crian-a/PHP/login.php'"><p>SAIR</p></button>
         </div>
-        <div class="main-background-bola"></div>    
+        <button class="botao-sair" type="button" onclick="location.href = 'index.php'"><p>SAIR</p></button>
+        <div class="main-background-bola"></div> 
+           
     </main>
 </body>
 </html>
