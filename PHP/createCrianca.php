@@ -52,6 +52,7 @@ if (isset($_POST['nome'])) {
                 <input type="text" name="nome"><br><br>
             </div>
 
+            
             <div>
                 <h3>Nome do Responsável</h3>
                 <input type="text" name="nome"><br><br>
