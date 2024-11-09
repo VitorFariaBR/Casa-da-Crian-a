@@ -3,21 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CASA DA CRIANÇA</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/homeADM.css">
+    <title>HOME</title>
 </head>
-<body class="cabecalho1">
-    <div class="cabecalho2">
-        <div class="cabecalho3">CASA DA CRIANÇA</div>
-        <div class="buttons">
-            <button >Lista de Chamada</button>
-            <button class="styledButton" type="button" onclick="location.href = '/PHP/listProfessor.php'">Professores</button>
+<body>
+    <header class="cabecalho">
+        <div class="cabecalho-titulo">
+            <h1>CASA DA CRIANÇA</h1>
         </div>
-        <div class="buttons">
-            <button class="styledButton" type="button" onclick="location.href = '/Projeto/Casa-da-Crian-a/PHP/listCrianca.php'">Alunos</button>
-            <button>Atividades</button>
+    </header>
+
+    <main>
+        <nav class="main-home-navegacao">
+            <div class="row">
+                <button>
+                    <p>Lista de Chamada</p>
+                </button>
+    
+                <button>
+                    <p>Professores</p>
+                </button>
+            </div>
+            <div class="row">
+                <button type="button" onclick="location.href = '/Projeto/Casa-da-Crian-a/PHP/painelCrianca.php'">
+                    <p>Alunos</p>
+                </button>
+    
+                <button>
+                    <p>Atividades</p>
+                </button>
+            </div>
+            <div class="row">
+                <button>
+                    <p>Turmas</p>
+                </button>
+            </div>
+        </nav>
+
+        <div class="main-logo-casadacrianca">
+            <div class="imagem"><img src="assets/img/LOGO casa da crianca.png" alt="Logo Casa da Criança"></div>
+            <button class="botao-sair" type="button" onclick="location.href = '/Projeto/Casa-da-Crian-a/PHP/login.php'"><p>SAIR</p></button>
         </div>
-        <button class="sair" type="button" onclick="location.href = '/Projeto/Casa-da-Crian-a/PHP/login.php'">SAIR</button>
-    </div>
+        <div class="main-background-bola"></div>    
+    </main>
 </body>
 </html>
