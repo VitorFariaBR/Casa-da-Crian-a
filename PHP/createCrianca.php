@@ -45,59 +45,60 @@ if (isset($_POST['nome'])) {
     </h3>
     <hr> -->
 
-    <section>
-        <section class="local-dos-dados">
-            <div>
-                <h3>Nome do Aluno</h3>
-                <input type="text" name="nome"><br><br>
+    <div class="form-container">
+        <form action="#">
+            <div class="form-row">
+                <div>
+                    <h3>Nome do Aluno:</h3>
+                    <input type="text" name="nome_professor">
+                </div>
+                <div>
+                    <h3>Nome do Responsável:</h3>
+                    <input type="text" name="disciplina">
+                </div>
+                <div>
+                    <h3>CPF do Responsável:</h3>
+                    <input type="text" name="cpf">
+                </div>
             </div>
 
-            
-            <div>
-                <h3>Nome do Responsável</h3>
-                <input type="text" name="nome"><br><br>
+            <div class="form-row">
+                <div>
+                    <h3>Data de Nascimento:</h3>
+                    <input type="text" name="data_nascimento">
+                </div>
+                <div>
+                    <h3>CPF do aluno:</h3>
+                    <input type="text" name="telefone">
+                </div>
+                <div>
+                    <h3>Salário:</h3>
+                    <input type="text" name="salario">
+                </div>
             </div>
 
-            <div>
-                <h3>CPF do Responsável</h3>
-                <input type="text" name="nome"><br><br>
-            </div>
-        </section>
-
-        <section class="local-dos-dados">
-            <div>
-            <h3>Data de Nascimento</h3>
-            <input type="text" name="nome"><br><br>
-            </div>
-
-            <div>
-                <h3>Telefone</h3>
-                <input type="text" name="nome"><br><br>
+            <div class="form-row">
+                <div>
+                    <h3>Endereço:</h3>
+                    <input type="text" name="endereco">
+                </div>
+                <div>
+                    <h3>Bairro:</h3>
+                    <input type="text" name="bairro">
+                </div>
+                <div>
+                    <h3>Cidade:</h3>
+                    <input type="text" name="cidade">
+                </div>
             </div>
 
-            <div>
-                <h3>CPF do Aluno</h3>
-                <input type="text" name="nome"><br><br>
+            <div class="button-container">
+                <button type="button" class="confirm-button">Relatório</button>
+                <button type="submit" class="confirm-button">Confirmar</button>
+                <button type="button" class="cancel-button">Cancelar</button>
             </div>
-        </section>
-
-        <section class="local-dos-dados">
-            <div>
-                <h3>Endereço</h3>
-                <input type="text" name="nome"><br><br>
-            </div>
-
-            <div>
-                <h3>Bairro</h3>
-                <input type="text" name="nome"><br><br>
-            </div>
-
-            <div>
-                <h3>Cidade</h3>
-                <input type="text" name="nome"><br><br>
-            </div>
-        </section> 
-    </section>
+        </form>
+    </div>
     <!--<p>
         Adicionar crianças - Casa da Criança
     </p>
