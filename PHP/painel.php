@@ -20,12 +20,12 @@
                     <p>Lista de Chamada</p>
                 </button>
     
-                <button>
-                    <p>Professores</p>
+                <button type="button" onclick="location.href = 'painelUsuario.php'">
+                    <p>Usuário</p>
                 </button>
             </div>
             <div class="row">
-                <button type="button" onclick="location.href = '/Projeto/Casa-da-Crian-a/PHP/painelCrianca.php'">
+                <button type="button" onclick="location.href = 'painelCrianca.php'">
                     <p>Alunos</p>
                 </button>
     
@@ -34,7 +34,7 @@
                 </button>
             </div>
             <div class="row">
-                <button>
+                <button type="button" onclick="location.href = 'painelTurmas.php'">
                     <p>Turmas</p>
                 </button>
             </div>

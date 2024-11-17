@@ -26,18 +26,18 @@
         <div class="linha"></div>
         <nav class="main-home-navegacao">
             <div class="cabecalho-navegacao">
-                <h2>ALUNOS</h2>
+                <h2>USUÁRIO</h2>
             </div>
             <div class="row">
-                <button type="button" onclick="location.href = '/Projeto/Casa-da-Crian-a/PHP/createCrianca.php'">
+                <button>
                     <p>Adicionar</p>
                 </button>
     
-                <button type="button" onclick="location.href = '/Projeto/Casa-da-Crian-a/PHP/listCrianca.php'">
-                    <p>Listar Crianças</p>
+                <button>
+                    <p>Buscar Usuários</p>
                 </button>
 
-                <button type="button" onclick="location.href = '/Projeto/Casa-da-Crian-a/PHP/updateCrianca.php'">
+                <button>
                     <p>Editar Dados</p>
                 </button>
             </div>

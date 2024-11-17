@@ -6,7 +6,6 @@ if (!isset($_SESSION) || ($_SESSION["loggedin"] == false)) {
 }
 
 include 'conect.php';
-
 if (isset($_POST['nome'])) {
     $nome = $_POST['nome'];
     $con = conect::conectar();
@@ -94,20 +93,11 @@ if (isset($_POST['nome'])) {
 
             <div class="button-container">
                 <button type="button" class="confirm-button">Relatório</button>
-                <button type="submit" class="confirm-button">Confirmar</button>
-                <button type="button" class="cancel-button">Cancelar</button>
+                <button type="submit" class="confirm-button" onclick="location.href = '/Projeto/Casa-da-Crian-a/PHP/listCrianca.php'">Salvar</button>
+                <button type="button" class="cancel-button" onclick="location.href = '/Projeto/Casa-da-Crian-a/PHP/painelCrianca.php'">Cancelar</button>
             </div>
         </form>
     </div>
-    <!--<p>
-        Adicionar crianças - Casa da Criança
-    </p>
-
-    <p>====== LISTA ======</p>
-    <form action="createCrianca.php" method="post">
-        <input type="text" name="nome"><br><br>
-        <button type="submit">Salvar</button>
-    </form> -->
 </body>
 
 </html>
