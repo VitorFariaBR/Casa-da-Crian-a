@@ -29,7 +29,7 @@
                 <h2>ALUNOS</h2>
             </div>
             <div class="row">
-                <button type="button" onclick="location.href = '/Projeto/Casa-da-Crian-a/PHP/createCrianca.php'">
+                <button type="button" onclick="location.href = 'createCrianca.php'">
                     <p>Adicionar</p>
                 </button>
     

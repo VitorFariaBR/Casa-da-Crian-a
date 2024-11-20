@@ -43,13 +43,10 @@
         <div class="main-logo-casadacrianca">
             <div class="imagem"><img src="assets/img/LOGO casa da crianca.png" alt="Logo Casa da Criança"></div>
         </div>
-        <div class="botoes-acao">
+        <div class="main-background-bola"></div> 
             <button type="button" onclick="location.href = 'login.php'">
                 <p>Sair</p>
             </button>
-        </div>
-        <div class="main-background-bola"></div> 
-           
     </main>
 </body>
 </html>
