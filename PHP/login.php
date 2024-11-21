@@ -9,7 +9,7 @@
     $usuario = $_POST['username'];
     $pass = $_POST['password'];
 
-    $sql = "SELECT * FROM usuarios WHERE username='$usuario' AND password= '$pass'";
+    $sql = "SELECT * FROM usuario WHERE username='$usuario' AND password= '$pass'";
     $conn = conect::conectar();
     $result = $conn->query($sql);
 

@@ -6,14 +6,14 @@ if (!isset($_SESSION) || ($_SESSION["loggedin"] == false)) {
 }
 
 include 'conect.php';
-if (isset($_POST['nome'])) {
-    $nome = $_POST['nome'];
+if (isset($_POST['NOME'])) {
+    $NOME = $_POST['NOME'];
     $con = conect::conectar();
     try {
-        $stmt = $con->prepare('INSERT INTO crianca(nome) VALUES(:v1)');
+        $stmt = $con->prepare('INSERT INTO aluno(NOME) VALUES(:v1)');
 
         $stmt->execute(array(
-            ':v1' => $nome
+            ':v1' => $NOME
         ));
 
         if ($stmt->rowCount() > 0) {
@@ -52,37 +52,37 @@ if (isset($_POST['nome'])) {
             <div class="form-row">
                 <div>
                     <h3>Nome do Aluno:</h3>
-                    <input type="text" name="nome_aluno">
+                    <input type="text" name="NOME">
                 </div>
                 <div>
                     <h3>CPF:</h3>
-                    <input type="text" name="cpf">
+                    <input type="text" name="CPF_ALUNO">
                 </div>
                 <div>
                     <h3>Data de Nascimento:</h3>
-                    <input type="text" name="data_nascimento">
+                    <input type="text" name="DATA_NASC">
                 </div>
             </div>
 
             <div class="form-row">
                 <div>
                     <h3>Endereço:</h3>
-                    <input type="text" name="endereco">
+                    <input type="text" name="ENDERECO_COMPLETO">
                 </div>
                 <div>
                     <h3>Bairro:</h3>
-                    <input type="text" name="bairro">
+                    <input type="text" name="BAIRRO">
                 </div>
                 <div>
                     <h3>Cidade:</h3>
-                    <input type="text" name="cidade">
+                    <input type="text" name="CIDADE">
                 </div>
             </div>
 
             <div class="form-row">
                 <div>
                     <h3>Telefone:</h3>
-                    <input type="text" name="telefone">
+                    <input type="text" name="TELEFONE">
                 </div>
             </div>
         </form>

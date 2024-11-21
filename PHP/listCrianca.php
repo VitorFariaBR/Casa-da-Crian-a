@@ -6,7 +6,7 @@
         }
 
     include 'conect.php';  
-    $sql = 'select * from crianca';
+    $sql = 'select * from aluno';
     $con = conect::conectar();
     $listCrianca = $con->query($sql);
 ?>
@@ -38,21 +38,33 @@
     <main>
         <div class="linha"></div>
         <nav class="main-home-navegacao">
-            <div class="cabecalho-navegacao">
-                <h2>LIsta de Alunos</h2>
+            <div>
+                <h2>Lista de Alunos</h2>
             </div>
                 <table>
                     <tr>
                         <th>ID</th>
+                        <th>Matrícula</th>
+                        <th>CPF</th>
                         <th>Nome</th>
-                        <th>Ações</th>
-                        
+                        <th>DD/MM/AA</th>
+                        <th>Cidade</th>
+                        <th>Endereço</th>
+                        <th>Bairro</th>
+                        <th>Telefone</th>
                     </tr>
                         <?php 
-                            foreach($listCrianca as $crianca){
+                            foreach($listCrianca as $aluno){
                                 echo'<tr>
-                                        <td>'. $crianca['id'] .'</td>
-                                        <td>'. $crianca['nome'] .'</td>  
+                                        <td>'. $aluno['ID_ALUNO'] .'</td>
+                                        <td>'. $aluno['MATRICULA'] .'</td>
+                                        <td>'. $aluno['CPF_ALUNO'] .'</td>
+                                        <td>'. $aluno['NOME'] .'</td>
+                                        <td>'. $aluno['DATA_NASC'] .'</td> 
+                                        <td>'. $aluno['CIDADE'] .'</td> 
+                                        <td>'. $aluno['ENDERECO_COMPLETO'] .'</td> 
+                                        <td>'. $aluno['BAIRRO'] .'</td> 
+                                        <td>'. $aluno['TELEFONE'] .'</td>    
                                     </tr>';
                             }
                         ?>
