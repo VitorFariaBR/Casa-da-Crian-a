@@ -6,14 +6,38 @@ if (!isset($_SESSION) || ($_SESSION["loggedin"] == false)) {
 }
 
 include 'conect.php';
-if (isset($_POST['NOME'])) {
-    $NOME = $_POST['NOME'];
+if (isset($_POST['NOME'], $_POST['ID_ALUNO'], $_POST['CPF_ALUNO'], $_POST['DATA_NASC'], $_POST['MATRICULA'], $_POST['ENDERECO_COMPLETO'], $_POST['BAIRRO'], $_POST['CIDADE'], $_POST['TELEFONE'])) {
+    $nome = $_POST['NOME'];
+    $idAluno = $_POST['ID_ALUNO'];
+    $cpfAluno = $_POST['CPF_ALUNO'];
+    $dataNasc = $_POST['DATA_NASC'];
+    $matricula = $_POST['MATRICULA'];
+    $enderecoCompleto = $_POST['ENDERECO_COMPLETO'];
+    $bairro = $_POST['BAIRRO'];
+    $cidade = $_POST['CIDADE'];
+    $telefone = $_POST['TELEFONE'];
     $con = conect::conectar();
     try {
         $stmt = $con->prepare('INSERT INTO aluno(NOME) VALUES(:v1)');
+        $stmt = $con->prepare('INSERT INTO aluno(ID_ALUNO) VALUES(:v2)');
+        $stmt = $con->prepare('INSERT INTO aluno(CPF_ALUNO) VALUES(:v3)');
+        $stmt = $con->prepare('INSERT INTO aluno(DATA_NASC) VALUES(:v4)');
+        $stmt = $con->prepare('INSERT INTO aluno(MATRICULA) VALUES(:v5)');
+        $stmt = $con->prepare('INSERT INTO aluno(ENDERECO_COMPLETO) VALUES(:v6)');
+        $stmt = $con->prepare('INSERT INTO aluno(BAIRRO) VALUES(:v7)');
+        $stmt = $con->prepare('INSERT INTO aluno(CIDADE) VALUES(:v8)');
+        $stmt = $con->prepare('INSERT INTO aluno(TELEFONE) VALUES(:v9)');
 
         $stmt->execute(array(
-            ':v1' => $NOME
+            ':v1' => $nome
+            ':v2' => $idAluno
+            ':v3' => $cpfAluno
+            ':v4' => $dataNasc
+            ':v5' => $matricula
+            ':V6' => $enderecoCompleto
+            ':v7' => $bairro
+            ':v8' => $cidade
+            ':v9' => $telefone
         ));
 
         if ($stmt->rowCount() > 0) {
@@ -46,9 +70,8 @@ if (isset($_POST['NOME'])) {
 
     <h1 class="Cadastro_aluno">Cadastrar Aluno</h1>
     <h1 class="Cadastro">Aluno</h1>
-
+<form action="createCrianca.php" method="post">
     <div class="form-container">
-        <form action="#">
             <div class="form-row">
                 <div>
                     <h3>Nome do Aluno:</h3>
@@ -85,13 +108,11 @@ if (isset($_POST['NOME'])) {
                     <input type="text" name="TELEFONE">
                 </div>
             </div>
-        </form>
     </div>
 
     <h1 class="Cadastro">Responsável</h1>
 
     <div class="form-container">
-        <form action="#">
             <div class="form-row">
                 <div>
                     <h3>Nome:</h3>
@@ -136,13 +157,11 @@ if (isset($_POST['NOME'])) {
                     <input type="text" name="Renda_capital">
                 </div>
             </div>
-        </form>
     </div>
 
     <h1 class="Cadastro"> Bens da Família </h1>
 
     <div class="form-container">
-        <form action="#">
             <div class="form-row">
                 <div>
                     <h3>Possui Imóvel:</h3>
@@ -157,13 +176,11 @@ if (isset($_POST['NOME'])) {
                     <input type="text" name="descricao_veiculo">
                 </div>
             </div>
-        </form>
     </div>
 
     <h1 class="Cadastro"> Despesas </h1>
 
     <div class="form-container">
-        <form action="#">
             <div class="form-row">
             <div>
                     <h3>Moradia:</h3>
@@ -208,7 +225,6 @@ if (isset($_POST['NOME'])) {
                     <input type="text" name="total_despesas">
                 </div>
             </div>
-        </form>
     </div>
 
     <h1 class="Cadastro">Benefícios</h1>
@@ -223,7 +239,7 @@ if (isset($_POST['NOME'])) {
                 <button type="button" class="cancel-button"
                     onclick="location.href = '/Projeto/Casa-da-Crian-a/PHP/painelCrianca.php'">Cancelar</button>
             </div>
-
+    </form>
 </body>
 
 </html>
