@@ -1,53 +1,41 @@
 <?php
 session_start();
 
-if (!isset($_SESSION) || ($_SESSION["loggedin"] == false)) {
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == false) {
     header("Location: painel.php");
+    exit;
 }
 
 include 'conect.php';
-if (isset($_POST['NOME'], $_POST['ID_ALUNO'], $_POST['CPF_ALUNO'], $_POST['DATA_NASC'], $_POST['MATRICULA'], $_POST['ENDERECO_COMPLETO'], $_POST['BAIRRO'], $_POST['CIDADE'], $_POST['TELEFONE'])) {
-    $nome = $_POST['NOME'];
-    $idAluno = $_POST['ID_ALUNO'];
-    $cpfAluno = $_POST['CPF_ALUNO'];
-    $dataNasc = $_POST['DATA_NASC'];
-    $matricula = $_POST['MATRICULA'];
-    $enderecoCompleto = $_POST['ENDERECO_COMPLETO'];
-    $bairro = $_POST['BAIRRO'];
-    $cidade = $_POST['CIDADE'];
-    $telefone = $_POST['TELEFONE'];
-    $con = conect::conectar();
-    try {
-        $stmt = $con->prepare('INSERT INTO aluno(NOME) VALUES(:v1)');
-        $stmt = $con->prepare('INSERT INTO aluno(ID_ALUNO) VALUES(:v2)');
-        $stmt = $con->prepare('INSERT INTO aluno(CPF_ALUNO) VALUES(:v3)');
-        $stmt = $con->prepare('INSERT INTO aluno(DATA_NASC) VALUES(:v4)');
-        $stmt = $con->prepare('INSERT INTO aluno(MATRICULA) VALUES(:v5)');
-        $stmt = $con->prepare('INSERT INTO aluno(ENDERECO_COMPLETO) VALUES(:v6)');
-        $stmt = $con->prepare('INSERT INTO aluno(BAIRRO) VALUES(:v7)');
-        $stmt = $con->prepare('INSERT INTO aluno(CIDADE) VALUES(:v8)');
-        $stmt = $con->prepare('INSERT INTO aluno(TELEFONE) VALUES(:v9)');
 
-        $stmt->execute(array(
-            ':v1' => $nome
-            ':v2' => $idAluno
-            ':v3' => $cpfAluno
-            ':v4' => $dataNasc
-            ':v5' => $matricula
-            ':V6' => $enderecoCompleto
-            ':v7' => $bairro
-            ':v8' => $cidade
-            ':v9' => $telefone
-        ));
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $dadosAluno = [
+        ':CPF_ALUNO' => $_POST['CPF_ALUNO'],
+        ':NOME' => $_POST['NOME'],
+        ':DATA_NASC' => $_POST['DATA_NASC'],
+        ':MATRICULA' => $_POST['MATRICULA'],
+        ':ENDERECO_COMPLETO' => $_POST['ENDERECO_COMPLETO'],
+        ':BAIRRO' => $_POST['BAIRRO'],
+        ':CIDADE' => $_POST['CIDADE'],
+        ':TELEFONE' => $_POST['TELEFONE']
+    ];
+
+    $con = conect::conectar();
+
+    try {
+        $stmt = $con->prepare('INSERT INTO aluno (CPF_ALUNO, NOME, DATA_NASC, MATRICULA, ENDERECO_COMPLETO, BAIRRO, CIDADE, TELEFONE) 
+                               VALUES (:CPF_ALUNO, :NOME, :DATA_NASC, :MATRICULA, :ENDERECO_COMPLETO, :BAIRRO, :CIDADE, :TELEFONE)');
+
+        $stmt->execute($dadosAluno);
 
         if ($stmt->rowCount() > 0) {
             header("Location: listCrianca.php");
+            exit;
         }
     } catch (PDOException $e) {
         echo 'Erro: ' . $e->getMessage();
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -61,32 +49,24 @@ if (isset($_POST['NOME'], $_POST['ID_ALUNO'], $_POST['CPF_ALUNO'], $_POST['DATA_
 </head>
 
 <body class="azul">
-    <!--<h3>
-        <?php
-        echo "CASA DA CRIANÇA";
-        ?>
-    </h3>
-    <hr> -->
-
     <h1 class="Cadastro_aluno">Cadastrar Aluno</h1>
     <h1 class="Cadastro">Aluno</h1>
-<form action="createCrianca.php" method="post">
-    <div class="form-container">
+    <form action="createCrianca.php" method="post">
+        <div class="form-container">
             <div class="form-row">
                 <div>
                     <h3>Nome do Aluno:</h3>
-                    <input type="text" name="NOME">
+                    <input type="text" name="NOME" required>
                 </div>
                 <div>
                     <h3>CPF:</h3>
-                    <input type="text" name="CPF_ALUNO">
+                    <input type="text" name="CPF_ALUNO" required>
                 </div>
                 <div>
-                    <h3>Data de Nascimento:</h3>
-                    <input type="text" name="DATA_NASC">
+                    <h3>Matrícula:</h3>
+                    <input type="text" name="MATRICULA">
                 </div>
             </div>
-
             <div class="form-row">
                 <div>
                     <h3>Endereço:</h3>
@@ -101,14 +81,23 @@ if (isset($_POST['NOME'], $_POST['ID_ALUNO'], $_POST['CPF_ALUNO'], $_POST['DATA_
                     <input type="text" name="CIDADE">
                 </div>
             </div>
-
             <div class="form-row">
                 <div>
+                    <h3>Data de Nascimento:</h3>
+                    <input type="date" name="DATA_NASC" required>
+                </div>
+                <div>
                     <h3>Telefone:</h3>
-                    <input type="text" name="TELEFONE">
+                    <input type="tel" name="TELEFONE">
                 </div>
             </div>
-    </div>
+        </div>
+
+        <div class="button-container">
+            <button type="submit" class="confirm-button">Confirmar</button>
+            <button type="button" class="cancel-button" onclick="location.href = 'painelCrianca.php'">Cancelar</button>
+        </div>
+    </form>
 
     <h1 class="Cadastro">Responsável</h1>
 
