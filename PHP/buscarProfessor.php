@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $searchTerm = $_POST['searchTerm'];
     $con = conect::conectar();
     
-    $stmt = $con->prepare('SELECT * FROM aluno WHERE NOME LIKE :searchTerm OR CPF_ALUNO LIKE :searchTerm');
+    $stmt = $con->prepare('SELECT * FROM professor WHERE NOME LIKE :searchTerm OR CPF_PROFESSOR LIKE :searchTerm');
     $stmt->execute([':searchTerm' => '%' . $searchTerm . '%']);
     $searchResult = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets4/style.css">
-    <title>Buscar Criança</title>
+    <title>Buscar Professor</title>
 </head>
 
 <body>
@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
 
         <div class="botoes-acao">
-            <button type="button" onclick="location.href = 'painelCrianca.php'">
+            <button type="button" onclick="location.href = 'painelUsuario.php'">
                 <p>Voltar</p>
             </button>
             <button type="button" onclick="location.href = 'login.php'">
@@ -47,11 +47,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <main>
         <div class="lista">
-            <h2>Buscar Criança</h2>
+            <h2>Buscar Professor</h2>
         </div>
 
-        <form action="buscarCrianca.php" method="post">
-            <input type="text" name="searchTerm" placeholder="Digite o nome ou CPF da criança" required>
+        <form action="buscarProfessor.php" method="post">
+            <input type="text" name="searchTerm" placeholder="Digite o nome ou CPF do professor" required>
             <button type="submit" class="search-button">Buscar</button>
         </form>
         <br>
@@ -64,9 +64,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>RA</th>
-                        <th>NOME</th>
                         <th>CPF</th>
+                        <th>NOME</th>
                         <th>Data de Nascimento</th>
                         <th>CIDADE</th>
                         <th>ENDEREÇO</th>
@@ -76,22 +75,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($searchResult as $aluno): ?>
+                    <?php foreach($searchResult as $professor): ?>
                         <tr>
-                            <td><?= $aluno['ID_ALUNO']; ?></td>
-                            <td><?= $aluno['MATRICULA']; ?></td>
-                            <td><?= $aluno['NOME']; ?></td>
-                            <td><?= $aluno['CPF_ALUNO']; ?></td>
-                            <td><?= $aluno['DATA_NASC']; ?></td>
-                            <td><?= $aluno['CIDADE']; ?></td>
-                            <td><?= $aluno['ENDERECO_COMPLETO']; ?></td>
-                            <td><?= $aluno['BAIRRO']; ?></td>
-                            <td><?= $aluno['TELEFONE']; ?></td>
+                            <td><?= $professor['ID_USER']; ?></td>
+                            <td><?= $professor['CPF_PROFESSOR']; ?></td>
+                            <td><?= $professor['NOME']; ?></td>
+                            <td><?= $professor['DATA_NASC']; ?></td>
+                            <td><?= $professor['CIDADE']; ?></td>
+                            <td><?= $professor['ENDERECO']; ?></td>
+                            <td><?= $professor['BAIRRO']; ?></td>
+                            <td><?= $professor['TELEFONE']; ?></td>
                             <td>
-                                <a href="deleteCrianca.php?ID_ALUNO=<?= $aluno['ID_ALUNO']; ?>">
+                                <a href="deleteProfessor.php?ID_USER=<?= $professor['ID_USER']; ?>">
                                     <img src="./foto/lixeira.png" alt="Lixeira">
                                 </a>
-                                <a href="updateCrianca.php?id=<?= $aluno['ID_ALUNO']; ?>">
+                                <a href="updateProfessor.php?id=<?= $professor['ID_USER']; ?>">
                                     <img src="./foto/lapis.png" alt="Lápis">
                                 </a>
                             </td>

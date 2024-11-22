@@ -37,7 +37,7 @@
                     <p>Lista Usuario</p>
                 </button>
     
-                <button type="button" onclick="location.href = 'createCrianca.php'">
+                <button type="button" onclick="location.href = 'painelUsuario4.php'">
                     <p>Buscar Usuários</p>
                 </button>
             </div>

@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $searchTerm = $_POST['searchTerm'];
     $con = conect::conectar();
     
-    $stmt = $con->prepare('SELECT * FROM aluno WHERE NOME LIKE :searchTerm OR CPF_ALUNO LIKE :searchTerm');
+    $stmt = $con->prepare('SELECT * FROM turma WHERE CPF_PROFESSOR LIKE :searchTerm');
     $stmt->execute([':searchTerm' => '%' . $searchTerm . '%']);
     $searchResult = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets4/style.css">
-    <title>Buscar Criança</title>
+    <title>Buscar Turma</title>
 </head>
 
 <body>
@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
 
         <div class="botoes-acao">
-            <button type="button" onclick="location.href = 'painelCrianca.php'">
+            <button type="button" onclick="location.href = 'painelTurmas.php'">
                 <p>Voltar</p>
             </button>
             <button type="button" onclick="location.href = 'login.php'">
@@ -47,11 +47,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <main>
         <div class="lista">
-            <h2>Buscar Criança</h2>
+            <h2>Buscar Turma</h2>
         </div>
 
-        <form action="buscarCrianca.php" method="post">
-            <input type="text" name="searchTerm" placeholder="Digite o nome ou CPF da criança" required>
+        <form action="buscarTurma.php" method="post">
+            <input type="text" name="searchTerm" placeholder="Digite o CPF do professor" required>
             <button type="submit" class="search-button">Buscar</button>
         </form>
         <br>
@@ -63,35 +63,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <table>
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>RA</th>
-                        <th>NOME</th>
                         <th>CPF</th>
-                        <th>Data de Nascimento</th>
-                        <th>CIDADE</th>
-                        <th>ENDEREÇO</th>
-                        <th>BAIRRO</th>
-                        <th>TELEFONE</th>
+                        <th>ID - Disciplina</th>
+                        <th>Quantidade máxima de Alunos</th>
+                        <th>Quantidade de Aulas Semanais</th>
                         <th>AÇÕES</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($searchResult as $aluno): ?>
+                    <?php foreach($searchResult as $turma): ?>
                         <tr>
-                            <td><?= $aluno['ID_ALUNO']; ?></td>
-                            <td><?= $aluno['MATRICULA']; ?></td>
-                            <td><?= $aluno['NOME']; ?></td>
-                            <td><?= $aluno['CPF_ALUNO']; ?></td>
-                            <td><?= $aluno['DATA_NASC']; ?></td>
-                            <td><?= $aluno['CIDADE']; ?></td>
-                            <td><?= $aluno['ENDERECO_COMPLETO']; ?></td>
-                            <td><?= $aluno['BAIRRO']; ?></td>
-                            <td><?= $aluno['TELEFONE']; ?></td>
+                            <td><?= $turma['CPF_PROFESSOR']; ?></td>
+                            <td><?= $turma['ID_DISCIPLINA']; ?></td>
+                            <td><?= $turma['QTD_MAX_ALUNOS']; ?></td>
+                            <td><?= $turma['QTD_AULAS_SEMANAIS']; ?></td>
                             <td>
-                                <a href="deleteCrianca.php?ID_ALUNO=<?= $aluno['ID_ALUNO']; ?>">
+                                <a href="deleteTurma.php?ID_TURMA=<?= $turma['ID_TURMA']; ?>">
                                     <img src="./foto/lixeira.png" alt="Lixeira">
                                 </a>
-                                <a href="updateCrianca.php?id=<?= $aluno['ID_ALUNO']; ?>">
+                                <a href="updateTurma.php?id=<?= $turma['ID_TURMA']; ?>">
                                     <img src="./foto/lapis.png" alt="Lápis">
                                 </a>
                             </td>
