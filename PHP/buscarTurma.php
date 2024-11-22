@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
 
         <form action="buscarTurma.php" method="post">
-            <input type="text" name="searchTerm" placeholder="Digite o CPF do professor" required>
+            <input type="text" name="searchTerm" placeholder="Digite o ID da Turma" required>
             <button type="submit" class="search-button">Buscar</button>
         </form>
         <br>

@@ -26,7 +26,7 @@
         <div class="linha"></div>
         <nav class="main-home-navegacao">
             <div class="cabecalho-navegacao">
-                <h2>LISTAR</h2>
+                <h2>BUSCAR</h2>
             </div>
             <div class="row">
                 <button type="button" onclick="location.href = 'buscarProfessor.php'">
