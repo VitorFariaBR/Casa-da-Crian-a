@@ -13,15 +13,12 @@ if (isset($_GET['ID_ALUNO'])) {
     $con = conect::conectar();
     try {
         $stmt = $con->prepare('DELETE FROM aluno WHERE ID_ALUNO = :v1');
-        $stmt->execute([':v1' => $idCrianca]);
+        $stmt->execute(array(':v1' => $idCrianca));
         
-        if ($stmt->rowCount() > 0) {
+        if($stmt->rowCount() > 0) {
             header("Location: listCrianca.php");
-            exit;
-        } else {
-            echo "Nenhum registro foi excluído.";
-        }
-    } catch (PDOException $e) {
+        } 
+    }catch(PDOException $e){
         echo 'Erro: ' . $e->getMessage();
     }
 } else {

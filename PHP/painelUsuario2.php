@@ -26,19 +26,15 @@
         <div class="linha"></div>
         <nav class="main-home-navegacao">
             <div class="cabecalho-navegacao">
-                <h2>USUÁRIO</h2>
+                <h2>ADICIONAR</h2>
             </div>
             <div class="row">
-                <button type="button" onclick="location.href = 'painelUsuario2.php'">
-                    <p>Adicionar</p>
+                <button type="button" onclick="location.href = 'createProfessor.php'">
+                    <p>Professor</p>
                 </button>
     
-                <button type="button" onclick="location.href = 'createCrianca.php'">
-                    <p>Buscar Usuários</p>
-                </button>
-
-                <button type="button" onclick="location.href = 'updateUsuario.php'">
-                    <p>Editar Dados</p>
+                <button type="button" onclick="location.href = 'createFuncionario.php'">
+                    <p>Funcionário</p>
                 </button>
             </div>
         </nav>

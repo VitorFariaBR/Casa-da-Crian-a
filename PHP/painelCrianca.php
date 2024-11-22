@@ -38,7 +38,7 @@
                 </button>
 
                 <button type="button" onclick="location.href = 'updateCrianca.php'">
-                    <p>Editar Dados</p>
+                    <p>Buscar Crianças</p>
                 </button>
             </div>
         </nav>

@@ -30,11 +30,6 @@
                     <p>Alunos</p>
                 </button>
     
-                <button>
-                    <p>Atividades</p>
-                </button>
-            </div>
-            <div class="row">
                 <button type="button" onclick="location.href = 'painelTurmas.php'">
                     <p>Turmas</p>
                 </button>
