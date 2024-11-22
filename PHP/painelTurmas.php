@@ -29,7 +29,7 @@
                 <h2>TURMAS</h2>
             </div>
             <div class="row">
-                <button>
+                <button  type="button" onclick="location.href = 'createTurma.php'">
                     <p>Adicionar</p>
                 </button>
     

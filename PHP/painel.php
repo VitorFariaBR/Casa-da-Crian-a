@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="assets/css/homeADM.css">
     <title>HOME</title>
 </head>
+
 <body>
     <header class="cabecalho">
         <div class="cabecalho-titulo">
@@ -41,12 +42,13 @@
         </nav>
 
         <div class="main-logo-casadacrianca">
+         
             <div class="imagem"><img src="assets/img/LOGO casa da crianca.png" alt="Logo Casa da Criança"></div>
-        </div>
-        <div class="main-background-bola"></div> 
-            <button type="button" onclick="location.href = 'login.php'">
+            <button class="botao-sair" type="button" onclick="location.href = 'login.php'">
                 <p>Sair</p>
             </button>
+        </div>
+        <div class="main-background-bola"></div>     
     </main>
 </body>
 </html>

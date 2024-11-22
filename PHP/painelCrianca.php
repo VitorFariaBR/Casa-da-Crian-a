@@ -33,11 +33,11 @@
                     <p>Adicionar</p>
                 </button>
     
-                <button type="button" onclick="location.href = '/Projeto/Casa-da-Crian-a/PHP/listCrianca.php'">
+                <button type="button" onclick="location.href = 'listCrianca.php'">
                     <p>Listar Crianças</p>
                 </button>
 
-                <button type="button" onclick="location.href = '/Projeto/Casa-da-Crian-a/PHP/updateCrianca.php'">
+                <button type="button" onclick="location.href = 'updateCrianca.php'">
                     <p>Editar Dados</p>
                 </button>
             </div>

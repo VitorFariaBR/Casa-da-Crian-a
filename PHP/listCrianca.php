@@ -28,7 +28,7 @@
         </div>
 
         <div class="botoes-acao">
-            <button type="button" onclick="location.href = 'painel.php'">
+            <button type="button" onclick="location.href = 'painelCrianca.php'">
                 <p>Voltar</p>
             </button>
             <button type="button" onclick="location.href = 'login.php'">
@@ -38,7 +38,10 @@
     </header>
 
     <main>
-        <h2 class="lista">Lista de Alunos</h2>
+
+        <div class="lista">
+            <h2>Lista de Alunos</h2>
+        </div>
             
         <table>
             <thead>

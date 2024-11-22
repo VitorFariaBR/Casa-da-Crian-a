@@ -29,15 +29,15 @@
                 <h2>USUÁRIO</h2>
             </div>
             <div class="row">
-                <button>
+                <button type="button" onclick="location.href = 'createUsuario.php'">
                     <p>Adicionar</p>
                 </button>
     
-                <button>
+                <button type="button" onclick="location.href = 'createCrianca.php'">
                     <p>Buscar Usuários</p>
                 </button>
 
-                <button>
+                <button type="button" onclick="location.href = 'updateUsuario.php'">
                     <p>Editar Dados</p>
                 </button>
             </div>

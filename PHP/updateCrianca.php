@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['ID_ALUNO'])) {
             <div class="form-row">
                 <div>
                     <h3>Nome do Aluno:</h3>
-                    <input type="text" name="NOME" value="<?php echo $crianca['NOME']; ?>" required>
+                    <input type="text" name="NOME" placeholder="Digite seu nome" value="<?php echo $crianca['NOME']; ?>" required>
                 </div>
                 <div>
                     <h3>CPF:</h3>
@@ -113,12 +113,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['ID_ALUNO'])) {
                 </div>
             </div>
         </div>
-
-        <div class="button-container">
-            <button type="submit" class="confirm-button" onclick="location.href = 'listCrianca.php'">Confirmar</button>
-            <button type="button" class="cancel-button" onclick="location.href = 'listCrianca.php'">Cancelar</button>
-        </div>
-    </form>
 
         <h1 class="Cadastro">Responsável</h1>
 
@@ -244,14 +238,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['ID_ALUNO'])) {
         <input class="beneficios" type="text" name="observações">
 
         <div class="button-container">
-            <button type="submit" class="confirm-button"
-                onclick="location.href = '/Projeto/Casa-da-Crian-a/PHP/listCrianca.php'">Relatório</button>
-            <button type="submit" class="confirm-button"
-                onclick="location.href = '/Projeto/Casa-da-Crian-a/PHP/listCrianca.php'">Confirmar</button>
-            <button type="button" class="cancel-button"
-                onclick="location.href = '/Projeto/Casa-da-Crian-a/PHP/painelCrianca.php'">Cancelar</button>
+            <button type="submit" class="confirm-button" onclick="location.href = 'listCrianca.php'">Confirmar</button>
+            <button type="button" class="cancel-button" onclick="location.href = 'listCrianca.php'">Cancelar</button>
         </div>
-    </table>
     </form>
 </body>
 </html>
