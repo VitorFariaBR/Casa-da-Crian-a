@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOME</title>
-    <link rel="stylesheet" href="assets3/css/Turmas.css";
+    <link rel="stylesheet" href="assets2/css/Usuario.css";
 </head>
 <body>
     <header class="cabecalho">
@@ -26,15 +26,15 @@
         <div class="linha"></div>
         <nav class="main-home-navegacao">
             <div class="cabecalho-navegacao">
-                <h2>TURMAS</h2>
+                <h2>LISTAR</h2>
             </div>
             <div class="row">
-                <button type="button" onclick="location.href = 'createTurma.php'">
-                    <p>Adicionar</p>
+                <button type="button" onclick="location.href = 'listProfessor.php'">
+                    <p>Professor</p>
                 </button>
     
-                <button type="button" onclick="location.href = 'listTurma.php'">
-                    <p>Lista de Turmas</p>
+                <button type="button" onclick="location.href = 'listFuncionario.php'">
+                    <p>Funcionário</p>
                 </button>
             </div>
         </nav>

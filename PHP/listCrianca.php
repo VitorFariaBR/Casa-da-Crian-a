@@ -1,14 +1,15 @@
 <?php
-    session_start();
+session_start();
 
-        if(!isset($_SESSION) || ($_SESSION["loggedin"] == false)){
-            header("Location: painel.php");
-        }
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == false) {
+    header("Location: painel.php");
+    exit;
+}
 
-    include 'conect.php';  
-    $sql = 'select * from aluno';
-    $con = conect::conectar();
-    $listCrianca = $con->query($sql);
+include 'conect.php';  
+$sql = 'SELECT * FROM aluno';
+$con = conect::conectar();
+$listCrianca = $con->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -57,31 +58,32 @@
                     <th>TELEFONE</th>
                     <th>AÇÕES</th>
                 </tr>
-                
+            </thead>
+            <tbody>
                 <?php 
-                    foreach($listCrianca as $aluno){
-                        echo'<tr>
-                            <td>'. $aluno['ID_ALUNO'] .'</td>
-                            <td>'. $aluno['MATRICULA'] .'</td>
-                            <td>'. $aluno['NOME'] .'</td>
-                            <td>'. $aluno['CPF_ALUNO'] .'</td>
-                            <td>'. $aluno['DATA_NASC'] .'</td> 
-                            <td>'. $aluno['CIDADE'] .'</td> 
-                            <td>'. $aluno['ENDERECO_COMPLETO'] .'</td> 
-                            <td>'. $aluno['BAIRRO'] .'</td> 
-                            <td>'. $aluno['TELEFONE'] .'</td> 
-                            <td> 
-                            <a href="deleteCrianca.php?id='. $aluno['ID_ALUNO'] .'"> 
+                foreach($listCrianca as $aluno){
+                    echo '<tr>
+                        <td>'. $aluno['ID_ALUNO'] .'</td>
+                        <td>'. $aluno['MATRICULA'] .'</td>
+                        <td>'. $aluno['NOME'] .'</td>
+                        <td>'. $aluno['CPF_ALUNO'] .'</td>
+                        <td>'. $aluno['DATA_NASC'] .'</td> 
+                        <td>'. $aluno['CIDADE'] .'</td> 
+                        <td>'. $aluno['ENDERECO_COMPLETO'] .'</td> 
+                        <td>'. $aluno['BAIRRO'] .'</td> 
+                        <td>'. $aluno['TELEFONE'] .'</td> 
+                        <td> 
+                            <a href="deleteCrianca.php?ID_ALUNO='. $aluno['ID_ALUNO'] .'"> 
                                 <img src="./foto/lixeira.png" alt="Lixeira"> 
                             </a> 
                             <a href="updateCrianca.php?id='. $aluno['ID_ALUNO'] .'"> 
                                 <img src="./foto/lapis.png" alt="Lapis"> 
-                                </a> 
-                            </td>   
-                            </tr>';
-                        }
-                    ?>
-            </thead>
+                            </a> 
+                        </td>   
+                    </tr>';
+                }
+                ?>
+            </tbody>
         </table>
     </main>
 </body>

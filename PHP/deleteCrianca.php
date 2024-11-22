@@ -6,22 +6,26 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == false) {
     exit;
 }
 
-include 'conect.php';  
+include 'conect.php';
 
 if (isset($_GET['ID_ALUNO'])) {
     $idCrianca = $_GET['ID_ALUNO'];
     $con = conect::conectar();
+
     try {
-        $stmt = $con->prepare('DELETE FROM aluno WHERE ID_ALUNO = :v1');
-        $stmt->execute(array(':v1' => $idCrianca));
+        $stmt = $con->prepare('DELETE FROM aluno WHERE ID_ALUNO = :id');
+        $stmt->execute([':id' => $idCrianca]);
         
-        if($stmt->rowCount() > 0) {
+        if ($stmt->rowCount() > 0) {
             header("Location: listCrianca.php");
-        } 
-    }catch(PDOException $e){
+            exit;
+        } else {
+            echo "Nenhuma criança encontrada com esse ID.";
+        }
+    } catch (PDOException $e) {
         echo 'Erro: ' . $e->getMessage();
     }
 } else {
-    echo "Criança não identificada";
+    echo "Criança não identificada.";
 }
 ?>

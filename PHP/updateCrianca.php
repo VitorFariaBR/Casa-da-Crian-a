@@ -31,10 +31,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['ID_ALUNO'])) {
         ':ENDERECO_COMPLETO' => $_POST['ENDERECO_COMPLETO'],
         ':BAIRRO' => $_POST['BAIRRO'],
         ':CIDADE' => $_POST['CIDADE'],
-        ':TELEFONE' => $_POST['TELEFONE'],
+        ':TELEFONE' => $_POST['TELEFONE']
     ];
 
     try {
+        $con = conect::conectar();
         $stmt = $con->prepare('UPDATE aluno 
                                SET NOME = :NOME, CPF_ALUNO = :CPF_ALUNO, DATA_NASC = :DATA_NASC, 
                                    MATRICULA = :MATRICULA, ENDERECO_COMPLETO = :ENDERECO_COMPLETO, 
@@ -69,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['ID_ALUNO'])) {
 
     <h1 class="Cadastro_aluno">Editar Aluno</h1>
     <h1 class="Cadastro">Aluno</h1>
-    <form action="editCrianca.php?id=<?php echo $crianca['ID_ALUNO']; ?>" method="post">
+    <form action="updateCrianca.php?id=<?php echo $crianca['ID_ALUNO']; ?>" method="post">
         <input type="hidden" name="ID_ALUNO" value="<?php echo $crianca['ID_ALUNO']; ?>">
         <div class="form-container">
             <div class="form-row">

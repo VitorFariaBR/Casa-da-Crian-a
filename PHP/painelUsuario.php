@@ -32,13 +32,13 @@
                 <button type="button" onclick="location.href = 'painelUsuario2.php'">
                     <p>Adicionar</p>
                 </button>
+
+                <button type="button" onclick="location.href = 'painelUsuario3.php'">
+                    <p>Lista Usuario</p>
+                </button>
     
                 <button type="button" onclick="location.href = 'createCrianca.php'">
                     <p>Buscar Usuários</p>
-                </button>
-
-                <button type="button" onclick="location.href = 'updateUsuario.php'">
-                    <p>Editar Dados</p>
                 </button>
             </div>
         </nav>

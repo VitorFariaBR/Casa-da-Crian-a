@@ -37,7 +37,7 @@
                     <p>Listar Crianças</p>
                 </button>
 
-                <button type="button" onclick="location.href = 'updateCrianca.php'">
+                <button type="button" onclick="location.href = 'buscarCrianca.php'">
                     <p>Buscar Crianças</p>
                 </button>
             </div>
