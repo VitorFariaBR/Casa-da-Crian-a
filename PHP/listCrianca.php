@@ -38,6 +38,8 @@
     </header>
 
     <main>
+        <h2 class="lista">Lista de Alunos</h2>
+            
         <table>
             <thead>
                 <tr>
