@@ -93,12 +93,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
         </div>
 
-        <div class="button-container">
-            <button type="submit" class="confirm-button">Confirmar</button>
-            <button type="button" class="cancel-button" onclick="location.href = 'painelCrianca.php'">Cancelar</button>
-        </div>
-    </form>
-
     <h1 class="Cadastro">Responsável</h1>
 
     <div class="form-container">
@@ -223,11 +217,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <input class="beneficios" type="text" name="observações">
 
     <div class="button-container">
-                <button type="submit" class="confirm-button"
-                    onclick="location.href = '/Projeto/Casa-da-Crian-a/PHP/listCrianca.php'">Confirmar</button>
-                <button type="button" class="cancel-button"
-                    onclick="location.href = '/Projeto/Casa-da-Crian-a/PHP/painelCrianca.php'">Cancelar</button>
-            </div>
+            <button type="submit" class="confirm-button" onclick="location.href = 'listCrianca.php'">Confirmar</button>
+            <button type="button" class="cancel-button" onclick="location.href = 'painelCrianca.php'">Cancelar</button>
+        </div>
     </form>
 </body>
 

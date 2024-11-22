@@ -7,11 +7,11 @@
 
 include 'conect.php';  
 
-if(isset($_GET['id'])){
-    $idCrianca = $_GET['id'];
+if(isset($_GET['ID_ALUNO'])){
+    $idCrianca = $_GET['ID_ALUNO'];
     $con = conect::conectar();
     try{
-        $stmt = $con->prepare('DELETE FROM crianca WHERE id = :v1');
+        $stmt = $con->prepare('DELETE FROM aluno WHERE ID_ALUNO = :v1');
 
         $stmt->execute(array(
             ':v1' => $idCrianca
